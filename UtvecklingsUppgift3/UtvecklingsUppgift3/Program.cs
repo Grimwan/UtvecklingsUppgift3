@@ -11,8 +11,22 @@ namespace UtvecklingsUppgift3
         static void Main(string[] args)
         {
             HeltalsSortering sort = new HeltalsSortering();
-
-            Console.WriteLine("Break");
+            Console.WriteLine("Unsorted list values from 1 - 25");
+            foreach (int listValue in sort.getContainer())
+            {    
+                Console.Write(listValue+", ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("___________________________________________________________________________________________");
+            
+            QuickSort quick = new QuickSort(sort.getContainer());
+            Console.WriteLine("Sorted list values from 1 - 25");
+            foreach (int listValue in sort.getContainer())
+            {
+                Console.Write(listValue + ", ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("___________________________________________________________________________________________");
             Console.ReadKey();
         }
     }
