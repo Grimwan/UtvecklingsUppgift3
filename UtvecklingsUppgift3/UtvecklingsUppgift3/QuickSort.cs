@@ -9,7 +9,7 @@ namespace UtvecklingsUppgift3
     public class QuickSort
     {
         private Dictionary<int, char[]> ConvertIntegerToCharArray;
-        public void instantiateDataTable()
+        public void InstantiateDataTable()
         {
             ConvertIntegerToCharArray = new Dictionary<int, char[]>();
             ConvertIntegerToCharArray[1] = "ett".ToCharArray();
@@ -45,7 +45,7 @@ namespace UtvecklingsUppgift3
             int Lowest = 0;
             int Highest = 25;
 
-            instantiateDataTable();
+            InstantiateDataTable();
             //now the quicksort algorithm is working.
             QuickSortFunction(list, Lowest, Highest);
         }
@@ -54,9 +54,9 @@ namespace UtvecklingsUppgift3
         {
             if(LowestValue<HighestValue)
             {
-                int Pivot_location = Partition(list, LowestValue, HighestValue);
-                QuickSortFunction(list, LowestValue, Pivot_location);
-                QuickSortFunction(list, Pivot_location + 1, HighestValue);
+                int PivotLocation = Partition(list, LowestValue, HighestValue);
+                QuickSortFunction(list, LowestValue, PivotLocation);
+                QuickSortFunction(list, PivotLocation + 1, HighestValue);
             }
         }
 
@@ -90,32 +90,31 @@ namespace UtvecklingsUppgift3
         }
 
 
-        public bool Compare(int listvalue, int pivot)
+        public bool Compare(int listValue, int Pivot)
         {
-            int amountOfLettersInListValue = ConvertIntegerToCharArray[listvalue].Count();
-            int amountOfLettersInpivot = ConvertIntegerToCharArray[pivot].Count();
+            int amountOfLettersInListValue = ConvertIntegerToCharArray[listValue].Count();
+            int amountOfLettersInPivot = ConvertIntegerToCharArray[Pivot].Count();
 
 
-            for (int i = 0; i < Math.Max(amountOfLettersInListValue, amountOfLettersInpivot); i++)
+            for (int i = 0; i < Math.Max(amountOfLettersInListValue, amountOfLettersInPivot); i++)
             {
                 if (amountOfLettersInListValue == i)
                     return true;
-                if (amountOfLettersInpivot == i)
+                if (amountOfLettersInPivot == i)
                     return false;
 
-                if (ConvertIntegerToCharArray[listvalue][i] < ConvertIntegerToCharArray[pivot][i])
+                if (ConvertIntegerToCharArray[listValue][i] < ConvertIntegerToCharArray[Pivot][i])
                 {
 
                     return true;
                 }
-                else if (ConvertIntegerToCharArray[listvalue][i] > ConvertIntegerToCharArray[pivot][i])
+                else if (ConvertIntegerToCharArray[listValue][i] > ConvertIntegerToCharArray[Pivot][i])
                 {
                     return false;
                 }
 
             }
-
-            //if its the same number it returns true
+            //If it is the same number it returns false since there is no point in swapping the same numbers
             return false;
         }
 

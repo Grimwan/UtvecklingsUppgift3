@@ -19,13 +19,9 @@ namespace UtvecklingsUppgift3
                 Container.Add(i);
                 Shuffle();
                 
-            }
-            //prepare a dictonary which converts the int to a chararray.
-          
-          
-           
+            } 
         }
-        public List<int> getContainer()
+        public List<int> GetContainer()
         {
             return Container;
         }
