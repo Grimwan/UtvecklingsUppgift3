@@ -10,7 +10,7 @@ namespace UtvecklingsUppgift3
    public class HeltalsSortering
     {
         private List<int> Container;
-        //the constructor creates the list and shuffles the data. 
+        //The constructor creates the list and shuffles the data. 
         public HeltalsSortering()
         {
             Container = new List<int>();
@@ -26,7 +26,7 @@ namespace UtvecklingsUppgift3
             return Container;
         }
     
-        //shuffles the List, Utilises the Random class to Shuffle the List. 
+        //shuffles the list, utilises the random class to shuffle the List. 
         public void Shuffle()
         {
             Random rng = new Random();
